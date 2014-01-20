@@ -1,0 +1,68 @@
+@(member : String)
+<div class="container">
+<div class="row">
+	<h1>KTwiter</h1>
+</div>
+
+<div class="row">
+    <nav class="navbar navbar-default" role="navigation">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                <span class="sr-only">Toggle navigation</span> 
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand">
+            	@if(member==null){
+            		IPS Project
+            	}else{
+            		Azul <span>@member</span>!
+            	}
+            </a>
+        </div>
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <ul class="nav navbar-nav">
+                <li class="active">
+                	<a href="#" class="btn-home"><span class="glyphicon glyphicon-home btn-home"></span>Home</a>
+                </li>
+                <li>
+                	<a class="btn-about" href="#">About</a>
+                </li>
+                <li>
+                	<a class="btn-contacte" href="#">Contact</a>
+                </li>
+                <li class="dropdown">
+                	<a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                		<span class="glyphicon glyphicon-search"></span>Search <b class="caret"></b>
+                	</a>
+                    <ul class="dropdown-menu" style="min-width: 300px;">
+                        <li>
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <form class="frm-search navbar-form navbar-left" role="search">
+                                    <div class="input-group">
+                                        <input type="text" id="ipt-search" name="ipt-search" class="form-control" placeholder="Search" />
+                                        <span class="input-group-btn">
+                                            <button class="btn btn-primary btn-search" type="button"> Go!</button>
+                                        </span>
+                                    </div>
+                                    </form>
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+            @if(member==null){
+            	@nav()
+            }else{
+            	@mnav()
+            }
+        </div>
+        <!-- /.navbar-collapse -->
+    </nav>
+</div>
+</div>
